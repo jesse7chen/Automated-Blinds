@@ -1,0 +1,9 @@
+.\ssd1306.o: SSD1306.c
+.\ssd1306.o: C:\Keil_v5\ARM\Inc\NXP\LPC11xx\LPC11xx.h
+.\ssd1306.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h
+.\ssd1306.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\ssd1306.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+.\ssd1306.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
+.\ssd1306.o: C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
+.\ssd1306.o: I2C.h
+.\ssd1306.o: SSD1306.h

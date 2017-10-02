@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include <rt_misc.h>
 #include "I2C.h"
-
-#define SCREEN_ADDR (0x3c)
+#include "SSD1306.h"
 
 /* Import external functions from Serial.c file                               */
 extern void SER_init (void);
@@ -26,12 +25,12 @@ void configureGPIO()
     LPC_GPIO0->DIR |= (1<<7);
 }
 
-void ledOn()
+void ledOn(void)
 {
 	LPC_GPIO0->DATA &= ~(1<<7);
 }
 
-void ledOff()
+void ledOff(void)
 {						 
 	LPC_GPIO0->DATA |= (1<<7);
 }
@@ -39,22 +38,14 @@ void ledOff()
 int main()
 {
 	uint8_t data = 0x26;
-	int i, j = 0;
+	int i = 0;
+	//int j =0;
 	SER_init();
 	configureGPIO();
 	I2C_init();
-	/*
-	ledOff();
-	for (i = 0; i < 0x0007FFFF; i++)
-	{
-	}
-	ledOn();
+	printf("Return value: %d", screen_init());
+	printf("Return value2: %d", screen_display());
 	
-	for (i = 0; i < 0x00000FFF; i++)
-	{
-	}
-	ledOff();
-	*/
 	while (1)
 	{
 		
@@ -69,10 +60,9 @@ int main()
 		{
 		}
 		j++;*/
-		for (i = 0; i < 0x008FFFFF; i++)
+		/*for (i = 0; i < 0x008FFFFF; i++)
 		{
 		}
-		I2C_write(SCREEN_ADDR, &data, 1);
-
+		I2C_write(SCREEN_ADDR, &data, 1);*/
 	}
 }

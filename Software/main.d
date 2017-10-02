@@ -9,3 +9,4 @@
 .\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rt_misc.h
 .\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\main.o: I2C.h
+.\main.o: SSD1306.h
