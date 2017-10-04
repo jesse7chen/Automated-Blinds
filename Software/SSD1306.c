@@ -202,7 +202,7 @@ void clear_display(void) {
 	}
 }
 
-void draw_char(uint8_t x, uint8_t y, unsigned char c){
+void draw_char(uint8_t x, uint8_t y, unsigned char c, uint8_t inverse){
 	int i = 0;
 	int j = 0;
 	int curr_bit = 0;
@@ -215,17 +215,27 @@ void draw_char(uint8_t x, uint8_t y, unsigned char c){
 		curr_bit = font[(c*5) + i];
 		for(j = 0; j < 7; j++, curr_bit >>= 1){
 			if(curr_bit & 0x01){
-				draw_pixel(x + i, y + j, 1);
+				if(inverse){
+					draw_pixel(x + i, y + j, 0);
+				}
+				else{
+					draw_pixel(x + i, y + j, 1);
+				}
 			}
 			else{
-				draw_pixel(x + i, y + j, 0);
+				if(inverse){
+					draw_pixel(x + i, y + j, 1);
+				}
+				else{
+					draw_pixel(x + i, y + j, 0);
+				}
 			}
 		}
 	}
-	curr_col = x+i+1;
+	curr_col = x+i+1; // For string writing function
 }
 
-void draw_string(uint8_t x, uint8_t y, char* s){
+void draw_string(uint8_t x, uint8_t y, char* s, uint8_t inverse){
 	unsigned char curr_char;
 	int i = 0;
 	
@@ -238,7 +248,15 @@ void draw_string(uint8_t x, uint8_t y, char* s){
 			curr_col = 0;
 			curr_row = (curr_row + 1) + 7; // Add 7 to account for font size
 		}
-		draw_char(curr_col, curr_row, curr_char);
+		draw_char(curr_col, curr_row, curr_char, inverse); // Curr_col should be updated automatically
 		curr_char = s[i++];
 	}
+}
+
+uint16_t get_curr_col(void){
+	return curr_col;
+}
+
+uint16_t get_curr_row(void){
+	return curr_row;
 }

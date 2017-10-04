@@ -49,7 +49,8 @@ int main()
 	}
 	
 	clear_display();	
-	draw_string(0, 0, "Select option: and make this a very long string");
+	draw_string(0, 0, "Select option:", 0);
+	draw_string(get_curr_col(), get_curr_row(), "Change times", 1);
 	screen_display();
 	
 	while (1)
