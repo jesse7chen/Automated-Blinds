@@ -7,3 +7,7 @@
 .\ssd1306.o: C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
 .\ssd1306.o: I2C.h
 .\ssd1306.o: SSD1306.h
+.\ssd1306.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\ssd1306.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rt_misc.h
+.\ssd1306.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\ssd1306.o: font.h

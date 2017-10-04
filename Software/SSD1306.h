@@ -31,5 +31,9 @@ void power_on_seq(void);
 static uint8_t send_command(uint8_t command);
 uint8_t screen_init(void);
 uint8_t screen_display(void);
+void clear_display(void);
+void draw_pixel(uint8_t x, uint8_t y, uint8_t data);
+void draw_char(uint8_t x, uint8_t y, unsigned char c);
+void draw_string(uint8_t x, uint8_t y, char* s);
 
 #endif /*_SSD1306_H_*/

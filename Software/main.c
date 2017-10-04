@@ -37,14 +37,20 @@ void ledOff(void)
 
 int main()
 {
-	uint8_t data = 0x26;
 	int i = 0;
 	//int j =0;
 	SER_init();
 	configureGPIO();
 	I2C_init();
-	printf("Return value: %d", screen_init());
-	printf("Return value2: %d", screen_display());
+	printf("Return value: %d\r\n", screen_init());
+	printf("Return value2: %d\r\n", screen_display());
+	for (i = 0; i < 0x008FFFFF; i++)
+	{
+	}
+	
+	clear_display();	
+	draw_string(0, 0, "Select option: and make this a very long string");
+	screen_display();
 	
 	while (1)
 	{

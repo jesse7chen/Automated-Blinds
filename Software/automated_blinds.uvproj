@@ -463,6 +463,26 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>SSD1306</GroupName>
+          <Files>
+            <File>
+              <FileName>SSD1306.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SSD1306.c</FilePath>
+            </File>
+            <File>
+              <FileName>SSD1306.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SSD1306.h</FilePath>
+            </File>
+            <File>
+              <FileName>font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\font.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

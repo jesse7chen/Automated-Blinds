@@ -15,7 +15,8 @@ static uint32_t status = 0;
 /* TODO: Implement functinality for subaddresses */
 
 void I2C_init(void){
-	/* TODO: Make sure I2C is in reset while programming these? */
+	/* Make sure I2C is in reset while programming these? */
+	LPC_SYSCON->PRESETCTRL &= ~(1UL << 1);
 	
 	/*Initialize IO pins */
 	LPC_IOCON->PIO0_4 &= ~(0x303);
@@ -32,7 +33,7 @@ void I2C_init(void){
 	LPC_I2C->CONSET = (1UL << 6); // Set to master transmitter mode (set I2C_enable)
 	
 	/* Set clock dividers */
-	LPC_I2C->SCLH = 0x000F; // Regular mode assuming 12 MHz sysclock (default rate). 
+	LPC_I2C->SCLH = 0x000F; // Fast mode assuming 12 MHz sysclock (default rate). 
 	LPC_I2C->SCLL = 0x000F;
 	
 	/* Reset local variable status */
@@ -44,7 +45,7 @@ static uint8_t write_addr(uint8_t addr, uint8_t r_w) {
 	LPC_I2C->CONSET |= (1UL << 5); // Set start bit
 	
 	while(LPC_I2C->STAT == 0xF8){
-		printf("Stuck 1\n");
+		// printf("Stuck 1\n");
 	}; // Poll to see if SI bit has been set yet
 	status = LPC_I2C->STAT;
 	switch (status) {
@@ -56,19 +57,19 @@ static uint8_t write_addr(uint8_t addr, uint8_t r_w) {
 			//while(1);
 			break;
 		case (0x38): /* Arbitration lost */
-			printf("Arbitration lost");
+			// printf("Arbitration lost");
 			return ARB_LOST;
 			//while(1);
 			break;
 		default:
-			printf("Unknown Status");
+			// printf("Unknown Status");
 			return UNKNOWN_STATUS;
 			//while(1);
 			break;
 	}
 
 	while(LPC_I2C->STAT == 0xF8){
-		printf("Stuck 2\n");
+		// printf("Stuck 2\n");
 	}; // Poll to see if SI bit has been set yet
 	status = LPC_I2C->STAT;
 	
@@ -78,17 +79,17 @@ static uint8_t write_addr(uint8_t addr, uint8_t r_w) {
 				return NO_ERR;
 				break;
 			case (0x20): /* NACK received instead of ACK */
-				printf("No slave response to address");
+				// printf("No slave response to address");
 				//while(1);
 				return NACK_ERROR;
 				break;
 			case (0x38): /* Arbitration lost */
-				printf("Arbitration lost");
+			// 	printf("Arbitration lost");
 				return ARB_LOST;
 				//while(1);
 				break;
 			default:
-				printf("Unknown Status");
+				// printf("Unknown Status");
 				return UNKNOWN_STATUS;
 				//while(1);
 				break;
@@ -125,7 +126,7 @@ static uint8_t write_byte(uint8_t data){
 	
 	while(LPC_I2C->STAT == 0xF8)
 	{
-		printf("Stuck 3\n");
+		// printf("Stuck 3\n");
 	}; // Poll to see if SI bit has been set yet
 	status = LPC_I2C->STAT;
 	switch (status) {
@@ -133,17 +134,17 @@ static uint8_t write_byte(uint8_t data){
 			return NO_ERR;
 			break;
 		case (0x30): /* Data sent, NACK received */
-			printf("NACK Error");
+			// printf("NACK Error");
 			return NACK_ERROR;
 			//while(1);
 			break;
 		case (0x38): /* Arbitration lost */
-			printf("Arb lost write\n");
+		//	printf("Arb lost write\n");
 			return ARB_LOST;
 			//while(1);
 			break;
 		default: /* Some other status was received */
-			printf("Unknown status");
+		//	printf("Unknown status");
 			return UNKNOWN_STATUS;
 			//while(1);
 			break;
@@ -199,7 +200,7 @@ uint8_t I2C_write(uint8_t addr, uint8_t *data, uint32_t length){
 	LPC_I2C->CONSET = 0x10; /* Sets stop flag. When we detect the stop condition, this is cleared automatically */
 	LPC_I2C->CONCLR = 0x08;  /* Clear SI flag */
 	
-	printf("Successful Write\n");
+	// printf("Successful Write\n");
 	return rval;
 }
 
