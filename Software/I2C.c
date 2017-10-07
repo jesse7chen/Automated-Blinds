@@ -13,7 +13,7 @@
 static uint32_t status = 0;
 
 /* TODO: Implement functinality for subaddresses */
-
+/* TODO: Add returns to read during addressing writing */
 void I2C_init(void){
 	/* Make sure I2C is in reset while programming these? */
 	LPC_SYSCON->PRESETCTRL &= ~(1UL << 1);
@@ -175,7 +175,6 @@ static void read_byte(uint8_t* data, uint8_t remaining_bytes){
 			break;
 	}
 }
-
 
 uint8_t I2C_write(uint8_t addr, uint8_t *data, uint32_t length){
 	int i;

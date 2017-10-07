@@ -1,6 +1,9 @@
 #ifndef _SSD1306_H_
 #define _SSD1306_H_
 
+#define SELECTED 1
+#define NOT_SELECTED 0
+
 #define SCREEN_ADDR (0x3c)
 
 #define SCREEN_DISPLAYALL_RESUME (0xA4)
@@ -35,6 +38,7 @@ void clear_display(void);
 void draw_pixel(uint8_t x, uint8_t y, uint8_t data);
 void draw_char(uint8_t x, uint8_t y, unsigned char c, uint8_t inverse);
 void draw_string(uint8_t x, uint8_t y, char* s, uint8_t inverse);
+void draw_space_between_chars(uint8_t x, uint8_t y, uint8_t data);
 
 uint16_t get_curr_col(void);
 uint16_t get_curr_row(void);

@@ -44,17 +44,29 @@ int main()
 	I2C_init();
 	printf("Return value: %d\r\n", screen_init());
 	printf("Return value2: %d\r\n", screen_display());
-	for (i = 0; i < 0x008FFFFF; i++)
-	{
-	}
-	
-	clear_display();	
-	draw_string(0, 0, "Select option:", 0);
-	draw_string(get_curr_col(), get_curr_row(), "Change times", 1);
-	screen_display();
-	
+
+
 	while (1)
 	{
+		for (i = 0; i < 0x008FFFFF; i++)
+		{
+		}
+		
+		clear_display();	
+		draw_string(0, 0, "Select option:", NOT_SELECTED);
+		draw_string(get_curr_col(), get_curr_row(), "Change times", SELECTED);
+		draw_string(get_curr_col(), get_curr_row(), " Set times", NOT_SELECTED);
+		screen_display();
+		
+		for (i = 0; i < 0x008FFFFF; i++)
+		{
+		}
+		
+		clear_display();
+		draw_string(0, 0, "Select option:", NOT_SELECTED);
+		draw_string(get_curr_col(), get_curr_row(), "Change times ", NOT_SELECTED);
+		draw_string(get_curr_col(), get_curr_row(), "Set times", SELECTED);
+		screen_display();
 		
 		/*ledOn();
 		printf("Led On, Iteration %d\n\r", j);
