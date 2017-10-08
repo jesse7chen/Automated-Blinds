@@ -3,6 +3,7 @@
 #include <rt_misc.h>
 #include "I2C.h"
 #include "SSD1306.h"
+#include "UI.h"
 
 /* Import external functions from Serial.c file                               */
 extern void SER_init (void);
@@ -39,11 +40,14 @@ int main()
 {
 	int i = 0;
 	//int j =0;
+	int shift = 0;
+	int increment = 0;
 	SER_init();
 	configureGPIO();
 	I2C_init();
 	printf("Return value: %d\r\n", screen_init());
 	printf("Return value2: %d\r\n", screen_display());
+
 
 
 	while (1)
@@ -53,20 +57,36 @@ int main()
 		}
 		
 		clear_display();	
-		draw_string(0, 0, "Select option:", NOT_SELECTED);
-		draw_string(get_curr_col(), get_curr_row(), "Change times", SELECTED);
-		draw_string(get_curr_col(), get_curr_row(), " Set times", NOT_SELECTED);
+		display_start_screen();
 		screen_display();
 		
 		for (i = 0; i < 0x008FFFFF; i++)
 		{
 		}
+
+		for(shift = 0; shift < 4; shift++){
+
+			for(increment = 0; increment < 10; increment++){			
+				clear_display();
+				display_time_screen();
+				screen_display();
+				change_time_on_display(1);
+
+				for (i = 0; i < 0x000FFFFF; i++)
+				{
+				}
+			}
+			
+			clear_display();
+			display_time_screen();
+			screen_display();
+			change_time_on_display(2);
+
+			for (i = 0; i < 0x000FFFFF; i++)
+			{
+			}
+		}
 		
-		clear_display();
-		draw_string(0, 0, "Select option:", NOT_SELECTED);
-		draw_string(get_curr_col(), get_curr_row(), "Change times ", NOT_SELECTED);
-		draw_string(get_curr_col(), get_curr_row(), "Set times", SELECTED);
-		screen_display();
 		
 		/*ledOn();
 		printf("Led On, Iteration %d\n\r", j);

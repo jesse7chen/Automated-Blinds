@@ -1,6 +1,8 @@
 #ifndef _SSD1306_H_
 #define _SSD1306_H_
 
+#include <stdint.h>
+
 #define SELECTED 1
 #define NOT_SELECTED 0
 
@@ -36,9 +38,11 @@ uint8_t screen_init(void);
 uint8_t screen_display(void);
 void clear_display(void);
 void draw_pixel(uint8_t x, uint8_t y, uint8_t data);
-void draw_char(uint8_t x, uint8_t y, unsigned char c, uint8_t inverse);
-void draw_string(uint8_t x, uint8_t y, char* s, uint8_t inverse);
+void draw_char(uint8_t x, uint8_t y, unsigned char c, uint8_t size, uint8_t inverse);
+void draw_string(uint8_t x, uint8_t y, char* s, uint8_t size, uint8_t inverse);
 void draw_space_between_chars(uint8_t x, uint8_t y, uint8_t data);
+void draw_solid_rectangle(uint8_t x, uint8_t y, uint8_t width, uint8_t height, uint8_t data);
+void draw_vertical_line_slow(uint8_t x, uint8_t y, uint8_t length, uint8_t data);
 
 uint16_t get_curr_col(void);
 uint16_t get_curr_row(void);

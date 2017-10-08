@@ -1,6 +1,6 @@
 #include "I2C.h"
-#include <stdio.h>
-#include <rt_misc.h>
+#include "LPC11xx.h"
+
 
 #define NO_ERR 0
 #define NACK_ERROR 1
@@ -99,20 +99,22 @@ static uint8_t write_addr(uint8_t addr, uint8_t r_w) {
 	else{
 		switch (status) {
 			case (0x40):  /* Address + read sent correctly */
+				return NO_ERR;
 				break;
 			case (0x48): /* NACK received instead of ACK */
 				//while(1);
+				return NACK_ERROR;
 				break;
 			case (0x38): /* Arbitration lost */
 				//while(1);				
+				return ARB_LOST;
 				break;
 			default:
 				//while(1);
+				return UNKNOWN_STATUS;
 				break;
 		}	
-	}
-	
-	return NO_ERR;
+	}	
 }
 
 

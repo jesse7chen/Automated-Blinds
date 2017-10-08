@@ -1,9 +1,8 @@
-#include "LPC11xx.h"
-#include "I2C.h"
 #include "SSD1306.h"
 #include <stdio.h>
-#include <rt_misc.h>
 #include "font.h"
+#include "LPC11xx.h"
+#include "I2C.h"
 
 #define SCREEN_ADDR (0x3c)
 #define SCREEN_HEIGHT (32)
@@ -16,6 +15,7 @@ static uint16_t curr_col = 0;
 
 /* TODO: Write code to return error values. Should function return immediately if byte is tried to be written out of bounds? */
 /* TODO: Add functionality for different font sizes since I need to change times */
+/* TODO: Draw better spacing function for char spacing */
 
 // IMPORTANT: MAKE SURE YOU ADDRESS AT DESIRED INDEX + 1 OF BUFFER, DUE TO EXTRA BYTE IN BEGINNING
 static uint8_t buffer[((SCREEN_HEIGHT * SCREEN_WIDTH)/8) + 1] = { 0x40,   /* This extra byte serves as the control byte, which tells the screen the rest of the data which follow is graphics data when the whole buffer is sent out.  */
@@ -195,6 +195,19 @@ void draw_pixel(uint8_t x, uint8_t y, uint8_t data){
 	}
 }
 
+// There is probably a more efficient way to do this, but let's see how this works. This is the most robust method.
+void draw_solid_rectangle(uint8_t x, uint8_t y, uint8_t width, uint8_t height, uint8_t data){
+	int i = 0;
+	int j = 0;
+	
+	for(i = 0; i < width; i++){
+		for(j = 0; j < height; j++){
+			draw_pixel(x+i, y+j, data);
+		}
+	}
+}
+
+// This only really works if each character is 8 lines tall. Also, might need to change this to depend on size
 void draw_space_between_chars(uint8_t x, uint8_t y, uint8_t data){
 	int buffer_idx;
 	
@@ -202,11 +215,11 @@ void draw_space_between_chars(uint8_t x, uint8_t y, uint8_t data){
 
 	/* Do some checks to make sure we don't access out of bounds data */
 	if (x >= SCREEN_WIDTH || y >= SCREEN_HEIGHT){
-		printf("Out of index user error in draw_pixel\r\n");
+		printf("Out of index user error in draw_space_between_chars\r\n");
 		return;
 	}
 	if(buffer_idx > BUFFER_SIZE){
-		printf("Out of index error calculation in draw_pixel\r\n");
+		printf("Out of index error calculation in draw_space_between_chars\r\n");
 		return;
 	}	
 	/* We only want to check if data is 1 or 0 */
@@ -218,6 +231,20 @@ void draw_space_between_chars(uint8_t x, uint8_t y, uint8_t data){
 	}
 }
 
+void draw_vertical_line_slow(uint8_t x, uint8_t y, uint8_t length, uint8_t data){
+	int i = 0;
+	
+	for(i = 0; i < length; i++){
+			if (y+length >= SCREEN_HEIGHT || x >= SCREEN_WIDTH){
+				printf("Line offscreen");
+				return;
+			}
+			draw_pixel(x, y+i, data);
+	}
+	curr_col = x+1;
+	curr_row = y;
+}
+
 void clear_display(void) {
 	int i = 0;
 	for(i = 1; i < BUFFER_SIZE; i++){
@@ -225,7 +252,7 @@ void clear_display(void) {
 	}
 }
 
-void draw_char(uint8_t x, uint8_t y, unsigned char c, uint8_t inverse){
+void draw_char(uint8_t x, uint8_t y, unsigned char c, uint8_t size, uint8_t inverse){
 	int i = 0;
 	int j = 0;
 	int curr_bit = 0;
@@ -239,26 +266,47 @@ void draw_char(uint8_t x, uint8_t y, unsigned char c, uint8_t inverse){
 		for(j = 0; j < 7; j++, curr_bit >>= 1){
 			if(curr_bit & 0x01){
 				if(inverse){
-					draw_pixel(x + i, y + j, 0);
+					if(size == 1){
+						draw_pixel(x + i, y + j, 0);
+					}
+					else{
+						draw_solid_rectangle(x+i*size, y+j*size, size, size, 0);
+					}
 				}
 				else{
-					draw_pixel(x + i, y + j, 1);
+					if(size == 1){
+						draw_pixel(x + i, y + j, 1);
+					}
+					else{
+						draw_solid_rectangle(x+i*size, y+j*size, size, size, 1);
+					}
 				}
 			}
 			else{
 				if(inverse){
-					draw_pixel(x + i, y + j, 1);
+					if(size == 1){
+						draw_pixel(x + i, y + j, 1);
+					}
+					else{
+						draw_solid_rectangle(x+i*size, y+j*size, size, size, 1);
+					}
 				}
 				else{
-					draw_pixel(x + i, y + j, 0);
+					if(size == 1){
+						draw_pixel(x + i, y + j, 0);
+					}
+					else{
+						draw_solid_rectangle(x+i*size, y+j*size, size, size, 0);
+					}
 				}
 			}
 		}
 	}
-	curr_col = x+i; // Incrementing column pointer for string writing function
+	curr_col = x+i*size; // Incrementing column pointer for string writing function
+	curr_row = y;
 }
 
-void draw_string(uint8_t x, uint8_t y, char* s, uint8_t inverse){
+void draw_string(uint8_t x, uint8_t y, char* s, uint8_t size, uint8_t inverse){
 	unsigned char curr_char;
 	int i = 0;
 	
@@ -271,9 +319,9 @@ void draw_string(uint8_t x, uint8_t y, char* s, uint8_t inverse){
 			curr_col = 0;
 			curr_row = (curr_row + 1) + 7; // Add 7 to account for font height
 		}
-		draw_char(curr_col, curr_row, curr_char, inverse); // Curr_col should be updated automatically
+		draw_char(curr_col, curr_row, curr_char, size, inverse); // Curr_col should be updated automatically
 		curr_char = s[i++];
-		draw_space_between_chars(curr_col++, curr_row, inverse); // It's ok for this to be "out of bounds"
+		draw_vertical_line_slow(curr_col++, curr_row, 7*size, inverse); // It's ok for this to be "out of bounds"
 	}
 }
 

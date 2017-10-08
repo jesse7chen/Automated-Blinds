@@ -1,7 +1,7 @@
 #ifndef _I2C_H_
 #define _I2C_H_
 
-#include "LPC11xx.h"
+#include <stdint.h>
 
 static uint8_t write_addr(uint8_t addr, uint8_t r_w);
 
