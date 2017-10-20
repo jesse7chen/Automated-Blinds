@@ -28,9 +28,8 @@ typedef enum TimeChar {
 } TimeChar;
 /* Hour left stands for the '1' in "12:34", hour right stands for the '2', etc. */
 
-
 /* These values correspond to the proper modulo of a digit to ensure it does not enter a improper state. For example, we can't have a time like "32:99"
-	 Each value is listed in order from the modulo for the left-most digit to the right-most digit so that the proper digit can be accessed with (int)curr_time_char*/
+Each value is listed in order from the modulo for the left-most digit to the right-most digit so that the proper digit can be accessed with (int)curr_time_char*/
 static int time_char_mod_values[4] = {
 	3, /*left hour digit mod value */
 	10, /* right hour digit mod value */ 
@@ -42,13 +41,13 @@ static TimeChar curr_time_char = hour_left;
 static Screen curr_screen = startScreen;
 static StartScreenOption start_screen_option = changeBlindTime_selected;
 
-/* I used a int array to store the time, since it's easier to manipulate */
+/* I used a int array to store the time, since it's easier to manipulate. I guess I could have also made this a struct or something */
 static int displayed_time[4] = {0,0,0,0};
 
 void select_screen_to_display(void){
 	switch(curr_screen){
 		case (startScreen):
-				display_start_screen();
+            display_start_screen();
 			break;
 		case (setAbsoluteTime):
 			break;
@@ -122,7 +121,12 @@ void change_time_on_display(uint8_t button_press){
 }
 
 void increment_time(void){
-	displayed_time[curr_time_char] = (displayed_time[(int)curr_time_char] + 1) % time_char_mod_values[(int)curr_time_char];
+    if(!(displayed_time[0] == 2 && curr_time_char == hour_right)){
+        displayed_time[curr_time_char] = (displayed_time[(int)curr_time_char] + 1) % time_char_mod_values[(int)curr_time_char];
+    }
+    else{
+        displayed_time[curr_time_char] = (displayed_time[(int)curr_time_char] + 1) % 4;
+    }
 }
 
 char u_int_to_char(int i){

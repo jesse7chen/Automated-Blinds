@@ -195,7 +195,7 @@ void draw_pixel(uint8_t x, uint8_t y, uint8_t data){
 	}
 }
 
-// There is probably a more efficient way to do this, but let's see how this works. This is the most robust method.
+// There is probably a more efficient way to do this, but let's see how this works. This is the most robust method at least
 void draw_solid_rectangle(uint8_t x, uint8_t y, uint8_t width, uint8_t height, uint8_t data){
 	int i = 0;
 	int j = 0;

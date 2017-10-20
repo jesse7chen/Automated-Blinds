@@ -4,6 +4,9 @@
 #include "I2C.h"
 #include "SSD1306.h"
 #include "UI.h"
+#include "core_cm0.h"
+
+#define PCLK_HZ 12000000U
 
 /* Import external functions from Serial.c file                               */
 extern void SER_init (void);
@@ -23,7 +26,7 @@ void configureGPIO()
 	*/
 
 	//set port 0_7 to output (high current drain in LPC1114)
-    LPC_GPIO0->DIR |= (1<<7);
+    //LPC_GPIO0->DIR |= (1<<7);
 }
 
 void ledOn(void)

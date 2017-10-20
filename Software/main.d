@@ -11,3 +11,4 @@
 .\main.o: I2C.h
 .\main.o: SSD1306.h
 .\main.o: UI.h
+.\main.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h
