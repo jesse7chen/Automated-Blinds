@@ -10,7 +10,7 @@ void init_buttons(void){
     LPC_GPIO0->DIR &= ~(BUTTON_UP);
     LPC_GPIO0->DIR &= ~(BUTTON_DOWN);
     LPC_GPIO0->DIR &= ~(BUTTON_ENTER);
-    LPC_GPIO0->DIR &= ~(BUTTON_BACK);
+    LPC_GPIO0->DIR &= ~(BUTTON_BACK); 
     
     /* Initialize our timer */
     LPC_TMR16B0->TCR = 0x01; 
@@ -18,8 +18,10 @@ void init_buttons(void){
     LPC_TMR16B0->MCR = (1U << 1) | (1U << 0); 
     /* Count up to 60,000, this should be ~5ms */
     LPC_TMR16B0->MR0 = 0xEA60; 
+    /* Enable clock for our timer */
+    LPC_SYSCON->SYSAHBCLKCTRL |= (1U << 7);
     /*  Enable timer interrupt */
-    NVIC_EnableIRQ(TIMER_16_0_IRQn);
+    NVIC_EnableIRQ(TIMER_16_0_IRQn); 
     
 }
 

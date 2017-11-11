@@ -5,6 +5,8 @@
 #include "SSD1306.h"
 #include "UI.h"
 #include "core_cm0.h"
+#include "button.h"
+//#include "bsp.h"
 
 #define PCLK_HZ 12000000U
 
@@ -29,6 +31,7 @@ void configureGPIO()
     //LPC_GPIO0->DIR |= (1<<7);
 }
 
+
 void ledOn(void)
 {
 	LPC_GPIO0->DATA &= ~(1<<7);
@@ -51,7 +54,10 @@ int main()
 	printf("Return value: %d\r\n", screen_init());
 	printf("Return value2: %d\r\n", screen_display());
 
-
+    /* TODO: Enable interrupts here */
+    
+    //__enable_irq();
+    //init_buttons();
 
 	while (1)
 	{
