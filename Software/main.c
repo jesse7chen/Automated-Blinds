@@ -38,7 +38,7 @@ void ledOn(void)
 }
 
 void ledOff(void)
-{						 
+{
 	LPC_GPIO0->DATA |= (1<<7);
 }
 
@@ -48,6 +48,7 @@ int main()
 	//int j =0;
 	int shift = 0;
 	int increment = 0;
+	int buttonRead = -1;
 	SER_init();
 	configureGPIO();
 	I2C_init();
@@ -55,27 +56,40 @@ int main()
 	printf("Return value2: %d\r\n", screen_display());
 
     /* TODO: Enable interrupts here */
-    
+
     //__enable_irq();
     //init_buttons();
 
+	clear_display();
+	display_time_screen();
+	screen_display();
+
 	while (1)
 	{
+		buttonRead = readButtons();
+		if(buttonRead!= -1){
+			change_time_on_display(buttonRead);
+		}
+
+		clear_display();
+		display_time_screen();
+		screen_display();
+		/*
 		for (i = 0; i < 0x008FFFFF; i++)
 		{
 		}
-		
-		clear_display();	
+
+		clear_display();
 		display_start_screen();
 		screen_display();
-		
+
 		for (i = 0; i < 0x008FFFFF; i++)
 		{
 		}
 
 		for(shift = 0; shift < 4; shift++){
 
-			for(increment = 0; increment < 10; increment++){			
+			for(increment = 0; increment < 10; increment++){
 				clear_display();
 				display_time_screen();
 				screen_display();
@@ -85,7 +99,7 @@ int main()
 				{
 				}
 			}
-			
+
 			clear_display();
 			display_time_screen();
 			screen_display();
@@ -94,9 +108,9 @@ int main()
 			for (i = 0; i < 0x000FFFFF; i++)
 			{
 			}
-		}
-		
-		
+		} */
+
+
 		/*ledOn();
 		printf("Led On, Iteration %d\n\r", j);
 		for (i = 0; i < 0x0007FFFF; i++)

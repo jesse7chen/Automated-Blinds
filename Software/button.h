@@ -10,6 +10,20 @@
 
 void init_buttons(void);
 
+void readButtons(void);
 
+int rawButtonPresses(int button);
+
+int leftButtonPressed(void);
+
+int rightButtonPressed(void);
+
+int upButtonPressed(void);
+
+int downButtonPressed(void);
+
+int enterButtonPressed(void);
+
+int backButtonPressed(void);
 
 #endif /* _BUTTON_H_ */
