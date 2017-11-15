@@ -10,7 +10,7 @@
 
 void init_buttons(void);
 
-void readButtons(void);
+int readButtons(void);
 
 int rawButtonPresses(int button);
 

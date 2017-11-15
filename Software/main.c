@@ -4,14 +4,13 @@
 #include "I2C.h"
 #include "SSD1306.h"
 #include "UI.h"
-#include "core_cm0.h"
 #include "button.h"
-//#include "bsp.h"
-
-#define PCLK_HZ 12000000U
+#include "bsp.h"
 
 /* Import external functions from Serial.c file                               */
 extern void SER_init (void);
+
+int global_count = 0;
 
 void configureGPIO()
 {
@@ -28,9 +27,8 @@ void configureGPIO()
 	*/
 
 	//set port 0_7 to output (high current drain in LPC1114)
-    //LPC_GPIO0->DIR |= (1<<7);
+    LPC_GPIO0->DIR |= (1<<7);
 }
-
 
 void ledOn(void)
 {
@@ -38,7 +36,7 @@ void ledOn(void)
 }
 
 void ledOff(void)
-{
+{						 
 	LPC_GPIO0->DATA |= (1<<7);
 }
 
@@ -48,48 +46,35 @@ int main()
 	//int j =0;
 	int shift = 0;
 	int increment = 0;
-	int buttonRead = -1;
 	SER_init();
 	configureGPIO();
 	I2C_init();
+    
 	printf("Return value: %d\r\n", screen_init());
 	printf("Return value2: %d\r\n", screen_display());
+    
+    init_buttons();
+    __enable_irq();
 
-    /* TODO: Enable interrupts here */
-
-    //__enable_irq();
-    //init_buttons();
-
-	clear_display();
-	display_time_screen();
-	screen_display();
 
 	while (1)
 	{
-		buttonRead = readButtons();
-		if(buttonRead!= -1){
-			change_time_on_display(buttonRead);
-		}
-
-		clear_display();
-		display_time_screen();
-		screen_display();
-		/*
 		for (i = 0; i < 0x008FFFFF; i++)
 		{
 		}
-
-		clear_display();
+        
+        printf("Global count: %d\r\n", LPC_TMR16B0->TC);
+		clear_display();	
 		display_start_screen();
 		screen_display();
-
+		
 		for (i = 0; i < 0x008FFFFF; i++)
 		{
 		}
 
 		for(shift = 0; shift < 4; shift++){
 
-			for(increment = 0; increment < 10; increment++){
+			for(increment = 0; increment < 10; increment++){			
 				clear_display();
 				display_time_screen();
 				screen_display();
@@ -99,7 +84,7 @@ int main()
 				{
 				}
 			}
-
+			
 			clear_display();
 			display_time_screen();
 			screen_display();
@@ -108,9 +93,9 @@ int main()
 			for (i = 0; i < 0x000FFFFF; i++)
 			{
 			}
-		} */
-
-
+		}
+		
+		
 		/*ledOn();
 		printf("Led On, Iteration %d\n\r", j);
 		for (i = 0; i < 0x0007FFFF; i++)
