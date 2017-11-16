@@ -6,7 +6,17 @@
 #define TIME_COLUMN 26
 #define TIME_ROW 5
 
-/* Make time characters look */
+#define UP 0
+#define RIGHT 1
+#define DOWN 2
+#define LEFT 3
+#define ENTER 4
+#define BACK 5
+
+#define NUM_START_SCREEN_OPTIONS 4
+
+/* Make time characters look a little nicer */
+/* TODO: Prettify code and fix bug where user can set hour to above 24 by setting -x to 9 while x- is less than 2 */
 
 typedef enum Screen {
 	startScreen,
@@ -17,7 +27,9 @@ typedef enum Screen {
 
 typedef enum StartScreenOption {
 	changeBlindTime_selected,
-	setAbsoluteTime_selected
+	setAbsoluteTime_selected,
+    openBlinds_selected,
+    closeBlinds_selected
 } StartScreenOption;
 
 typedef enum TimeChar {
@@ -50,6 +62,7 @@ void select_screen_to_display(void){
             display_start_screen();
 			break;
 		case (setAbsoluteTime):
+            display_time_screen();
 			break;
 		case (setOpenTime):
 			break;
@@ -60,16 +73,74 @@ void select_screen_to_display(void){
 	}
 }
 
+void modifyScreen(int buttonPress){
+    switch(curr_screen){
+		case (startScreen):
+            modifyStartScreen(buttonPress);
+			break;
+		case (setAbsoluteTime):
+            change_time_on_display(buttonPress);
+			break;
+		case (setOpenTime):
+			break;
+		case (setCloseTime):
+			break;
+		default:
+			break;
+    }
+}
+
+/* 0 = up, 1 = right, 2 = down, 3 = left */
+static void modifyStartScreen(buttonPress){
+    switch(buttonPress){
+        case(UP):
+            start_screen_option = (start_screen_option - 1 + NUM_START_SCREEN_OPTIONS) % NUM_START_SCREEN_OPTIONS;
+			break;
+		case(RIGHT):
+            start_screen_option = (start_screen_option + 1) % NUM_START_SCREEN_OPTIONS;
+			break;
+		case(DOWN):
+            start_screen_option = (start_screen_option + 1) % NUM_START_SCREEN_OPTIONS;
+			break;
+		case(LEFT):
+            start_screen_option = (start_screen_option - 1 + NUM_START_SCREEN_OPTIONS) % NUM_START_SCREEN_OPTIONS;
+			break;
+        case(ENTER):
+            curr_screen = setAbsoluteTime;
+            break;
+        case(BACK):
+            break;
+		default:
+			break;
+    }
+}
+
 void display_start_screen(void){
 	draw_string(0, 0, "Select option:", 1, NOT_SELECTED);
 	switch(start_screen_option){
 		case (changeBlindTime_selected):
 			draw_string(get_curr_col(), get_curr_row(), "Change times", 1, SELECTED);
 			draw_string(get_curr_col(), get_curr_row(), " Set current time", 1, NOT_SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), " Open blinds", 1, NOT_SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), " Close blinds", 1, NOT_SELECTED);
 			break;
 		case (setAbsoluteTime_selected):
 			draw_string(get_curr_col(), get_curr_row(), "Change times ", 1, NOT_SELECTED);
 			draw_string(get_curr_col(), get_curr_row(), "Set current time", 1, SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), " Open blinds", 1, NOT_SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), " Close blinds", 1, NOT_SELECTED);
+			break;
+        case (openBlinds_selected):
+			draw_string(get_curr_col(), get_curr_row(), "Change times ", 1, NOT_SELECTED);
+			draw_string(get_curr_col(), get_curr_row(), "Set current time ", 1, NOT_SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), "Open blinds", 1, SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), " Close blinds", 1, NOT_SELECTED);
+			break;
+        case (closeBlinds_selected):
+			draw_string(get_curr_col(), get_curr_row(), "Change times ", 1, NOT_SELECTED);
+			draw_string(get_curr_col(), get_curr_row(), "Set current time ", 1, NOT_SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), "Open blinds ", 1, NOT_SELECTED);
+            draw_string(get_curr_col(), get_curr_row(), "Close blinds", 1, SELECTED);
 			break;
 		default:
 			break;
@@ -93,20 +164,20 @@ void display_time_screen(void){
 	draw_char(get_curr_col(), get_curr_row(), u_int_to_char(displayed_time[(int)minute_right]), TIME_SIZE, curr_time_char == minute_right);
 }
 
-/* 1 = up, 2 = right, 3 = down, 4 = left */
-void change_time_on_display(uint8_t button_press){
+/* 0 = up, 1 = right, 2 = down, 3 = left */
+void change_time_on_display(int buttonPress){
 	
-	switch(button_press){
-		case(1):
+	switch(buttonPress){
+		case(UP):
 			increment_time();
 			break;
-		case(2):
+		case(RIGHT):
 			curr_time_char = (TimeChar)(((int)curr_time_char+1) % 4);
 			break;
-		case(3):
+		case(DOWN):
 			decrement_time();
 			break;
-		case(4):
+		case(LEFT):
 			if((int)curr_time_char - 1 >= 0){
 				curr_time_char--;
 			}
@@ -114,6 +185,10 @@ void change_time_on_display(uint8_t button_press){
 				curr_time_char = minute_right;
 			}
 			break;
+        case(ENTER):
+            break;
+        case(BACK):
+            curr_screen = startScreen;
 		default:
 			break;
 	}

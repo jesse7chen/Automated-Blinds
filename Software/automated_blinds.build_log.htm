@@ -28,12 +28,28 @@ Project File Date:  11/14/2017
 *** Using Compiler 'V5.06 update 2 (build 183)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'automated_blinds'
 compiling UI.c...
-compiling bsp.c...
+UI.c(94): warning:  #1294-D: Old-style function modifyStartScreen
+  static void modifyStartScreen(buttonPress){
+UI.c(97): warning:  #188-D: enumerated type mixed with another type
+              start_screen_option = (start_screen_option - 1 + 
+UM_START_SCREEN_OPTIONS) % 
+UM_START_SCREEN_OPTIONS;
+UI.c(100): warning:  #188-D: enumerated type mixed with another type
+              start_screen_option = (start_screen_option + 1) % 
+UM_START_SCREEN_OPTIONS;
+UI.c(103): warning:  #188-D: enumerated type mixed with another type
+              start_screen_option = (start_screen_option + 1) % 
+UM_START_SCREEN_OPTIONS;
+UI.c(106): warning:  #188-D: enumerated type mixed with another type
+              start_screen_option = (start_screen_option - 1 + 
+UM_START_SCREEN_OPTIONS) % 
+UM_START_SCREEN_OPTIONS;
+UI.c: 5 warnings, 0 errors
 compiling button.c...
 linking...
-Program Size: Code=5970 RO-data=1546 RW-data=556 ZI-data=636  
-".\automated_blinds.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:02
+Program Size: Code=6552 RO-data=1544 RW-data=560 ZI-data=640  
+".\automated_blinds.axf" - 0 Error(s), 5 Warning(s).
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

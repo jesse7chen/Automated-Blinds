@@ -5,14 +5,14 @@
 #include "stdio.h"
 
 #define NUM_BUTTONS 6
-#define LEFT 0
+#define UP 0
 #define RIGHT 1
-#define UP 2
-#define DOWN 3
+#define DOWN 2
+#define LEFT 3
 #define ENTER 4
 #define BACK 5
 
-
+static int lastButtonPressed = -1;
 
 
 
@@ -57,7 +57,10 @@ int readButtons(void){
     for(button = 0; button < NUM_BUTTONS; button++){
         states[button] = (states[button] << 1) | !rawButtonPresses(button) | 0xE000;
         if(states[button] == 0xF000){
-            printf("Button %d press\r\n", button);
+            if(lastButtonPressed == -1){
+                lastButtonPressed = button;
+            }
+            printf("Button %d pressed\r\n", button);
             return button;
         }
     }
@@ -66,7 +69,7 @@ int readButtons(void){
 }
 
 /* Returns 1 if pressed, 0 otherise */
-int rawButtonPresses(int button){
+static int rawButtonPresses(int button){
     switch (button){
         case(LEFT):
             return leftButtonPressed();
@@ -84,26 +87,34 @@ int rawButtonPresses(int button){
             return 0;
     }
 }
-int leftButtonPressed(void){
+static int leftButtonPressed(void){
     return LPC_GPIO0->DATA & (BUTTON_LEFT);
 }
 
-int rightButtonPressed(void){
+static int rightButtonPressed(void){
     return LPC_GPIO0->DATA & (BUTTON_RIGHT);
 }
 
-int upButtonPressed(void){
+static int upButtonPressed(void){
     return LPC_GPIO0->DATA & (BUTTON_UP);
 }
 
-int downButtonPressed(void){
+static int downButtonPressed(void){
     return LPC_GPIO0->DATA & (BUTTON_DOWN);
 }
 
-int enterButtonPressed(void){
+static int enterButtonPressed(void){
     return LPC_GPIO0->DATA & (BUTTON_ENTER);
 }
 
-int backButtonPressed(void){
+static int backButtonPressed(void){
     return LPC_GPIO0->DATA & (BUTTON_BACK);
+}
+
+int getLastPressed(void){
+    return lastButtonPressed;
+}
+
+void resetLastPressed(void){
+    lastButtonPressed = -1;
 }

@@ -46,6 +46,7 @@ int main()
 	//int j =0;
 	int shift = 0;
 	int increment = 0;
+    int lastButton = -1;
 	SER_init();
 	configureGPIO();
 	I2C_init();
@@ -55,10 +56,24 @@ int main()
     
     init_buttons();
     __enable_irq();
+    
+    for (i = 0; i < 0x008FFFFF; i++)
+    {
+    }
 
 
 	while (1)
 	{
+        
+        clear_display();
+        lastButton = getLastPressed();
+        if(lastButton != -1){
+            modifyScreen(lastButton);
+            resetLastPressed();
+        }
+        select_screen_to_display();
+        screen_display();
+        /*
 		for (i = 0; i < 0x008FFFFF; i++)
 		{
 		}
@@ -78,7 +93,7 @@ int main()
 				clear_display();
 				display_time_screen();
 				screen_display();
-				change_time_on_display(1);
+				change_time_on_display(0);
 
 				for (i = 0; i < 0x000FFFFF; i++)
 				{
@@ -88,12 +103,12 @@ int main()
 			clear_display();
 			display_time_screen();
 			screen_display();
-			change_time_on_display(2);
+			change_time_on_display(1);
 
 			for (i = 0; i < 0x000FFFFF; i++)
 			{
 			}
-		}
+		}*/
 		
 		
 		/*ledOn();

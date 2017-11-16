@@ -12,18 +12,22 @@ void init_buttons(void);
 
 int readButtons(void);
 
-int rawButtonPresses(int button);
+int getLastPressed(void);
 
-int leftButtonPressed(void);
+void resetLastPressed(void);
 
-int rightButtonPressed(void);
+static int rawButtonPresses(int button);
 
-int upButtonPressed(void);
+static int leftButtonPressed(void);
 
-int downButtonPressed(void);
+static int rightButtonPressed(void);
 
-int enterButtonPressed(void);
+static int upButtonPressed(void);
 
-int backButtonPressed(void);
+static int downButtonPressed(void);
+
+static int enterButtonPressed(void);
+
+static int backButtonPressed(void);
 
 #endif /* _BUTTON_H_ */
