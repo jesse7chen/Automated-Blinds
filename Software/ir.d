@@ -1,0 +1,10 @@
+.\ir.o: IR.c
+.\ir.o: IR.h
+.\ir.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\ir.o: C:\Keil_v5\ARM\Inc\NXP\LPC11xx\LPC11xx.h
+.\ir.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h
+.\ir.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+.\ir.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
+.\ir.o: C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
+.\ir.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h
+.\ir.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -13,3 +13,4 @@
 .\main.o: UI.h
 .\main.o: button.h
 .\main.o: bsp.h
+.\main.o: IR.h

@@ -6,6 +6,7 @@
 #include "UI.h"
 #include "button.h"
 #include "bsp.h"
+#include "IR.h"
 
 /* Import external functions from Serial.c file                               */
 extern void SER_init (void);
@@ -55,6 +56,8 @@ int main()
 	printf("Return value2: %d\r\n", screen_display());
     
     init_buttons();
+    initIR();
+    
     __enable_irq();
     
     for (i = 0; i < 0x008FFFFF; i++)

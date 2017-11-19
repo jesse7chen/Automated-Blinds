@@ -18,23 +18,20 @@ static int lastButtonPressed = -1;
 
 void init_buttons(void){
     /* In IOCON, all pins should be GPIO and pull-up enabled by default. They should also be configured as inputs by default */
-    /*LPC_GPIO0->DIR &= ~(BUTTON_LEFT);
+    LPC_GPIO0->DIR &= ~(BUTTON_LEFT);
     LPC_GPIO0->DIR &= ~(BUTTON_RIGHT);
     LPC_GPIO0->DIR &= ~(BUTTON_UP);
     LPC_GPIO0->DIR &= ~(BUTTON_DOWN);
     LPC_GPIO0->DIR &= ~(BUTTON_ENTER);
-    LPC_GPIO0->DIR &= ~(BUTTON_BACK);*/
+    LPC_GPIO0->DIR &= ~(BUTTON_BACK);
     
     //LPC_IOCON->PIO0_8 |= (1UL << 2);
     /* Enable clock for our timer */
-    LPC_SYSCON->SYSAHBCLKCTRL |= (1UL << 7 | 1UL << 8);
+    LPC_SYSCON->SYSAHBCLKCTRL |= 1UL << 7;
     
     /* Enable our timer */
     LPC_TMR16B0->TCR = 1UL;
     
-    printf("RUNNING INIT BUTTONS\r\n");
-    printf("TCR value: %x\r\n", LPC_TMR16B0->TCR);
-
     /* Generate interrupt and reset timer when we hit count limit */
     LPC_TMR16B0->MCR = (1UL << 1) | (1UL << 0);
     /* Count up to 60,000, this should be ~5ms */

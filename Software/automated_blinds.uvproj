@@ -523,6 +523,36 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Commands</GroupName>
+          <Files>
+            <File>
+              <FileName>command.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\command.c</FilePath>
+            </File>
+            <File>
+              <FileName>command.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\command.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>IR</GroupName>
+          <Files>
+            <File>
+              <FileName>IR.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IR.c</FilePath>
+            </File>
+            <File>
+              <FileName>IR.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\IR.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

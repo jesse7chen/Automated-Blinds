@@ -22,6 +22,7 @@
 /* Make time characters look a little nicer */
 /* TODO: Prettify code and fix bug where user can set hour to above 24 by setting -x to 9 while x- is less than 2 */
 /* TODO: Display some kind of feedback after commands are sent! */
+/* TODO: Reset curr_time_char after exiting time screen */
 typedef enum Screen {
 	startScreen,
 	setAbsoluteTime,
