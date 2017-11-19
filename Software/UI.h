@@ -12,9 +12,11 @@ void display_time_screen(void);
 void change_time_on_display(int buttonPress);
 char u_int_to_char(int i);
 
-void increment_time(void);
-void decrement_time(void);
-
+static void increment_time(void);
+static void decrement_time(void);
+static void resetTime(void);
 static void modifyStartScreen(int buttonPress);
+static void displayPresetScreen(void);
+static void modifyPresetScreen(int buttonPress);
 
 #endif /* _UI_H_ */

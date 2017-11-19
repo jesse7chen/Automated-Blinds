@@ -73,58 +73,6 @@ int main()
         }
         select_screen_to_display();
         screen_display();
-        /*
-		for (i = 0; i < 0x008FFFFF; i++)
-		{
-		}
-        
-        printf("Global count: %d\r\n", LPC_TMR16B0->TC);
-		clear_display();	
-		display_start_screen();
-		screen_display();
-		
-		for (i = 0; i < 0x008FFFFF; i++)
-		{
-		}
 
-		for(shift = 0; shift < 4; shift++){
-
-			for(increment = 0; increment < 10; increment++){			
-				clear_display();
-				display_time_screen();
-				screen_display();
-				change_time_on_display(0);
-
-				for (i = 0; i < 0x000FFFFF; i++)
-				{
-				}
-			}
-			
-			clear_display();
-			display_time_screen();
-			screen_display();
-			change_time_on_display(1);
-
-			for (i = 0; i < 0x000FFFFF; i++)
-			{
-			}
-		}*/
-		
-		
-		/*ledOn();
-		printf("Led On, Iteration %d\n\r", j);
-		for (i = 0; i < 0x0007FFFF; i++)
-		{
-		}
-		ledOff();
-		printf("Led Off, Iteration %d\n\r", j);
-		for (i = 0; i < 0x0007FFFF; i++)
-		{
-		}
-		j++;*/
-		/*for (i = 0; i < 0x008FFFFF; i++)
-		{
-		}
-		I2C_write(SCREEN_ADDR, &data, 1);*/
 	}
 }
