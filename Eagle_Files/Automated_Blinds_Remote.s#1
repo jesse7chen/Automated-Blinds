@@ -6172,6 +6172,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="R7" library="rcl" deviceset="R-US_" device="0207/10" value="10"/>
 <part name="+3V14" library="supply1" deviceset="+3V3" device=""/>
 <part name="POWER_SWITCH" library="DIP-SLIDE-SWITCH_3P-11.6X4.0X5.4_2.0MM_" deviceset="DIP-SLIDE-SWITCH(3P-11.6X4.0X5.4+2.0MM)" device="-EG1218"/>
+<part name="R8" library="rcl" deviceset="R-US_" device="0207/10" value="10"/>
+<part name="R9" library="rcl" deviceset="R-US_" device="0207/10" value="10"/>
 </parts>
 <sheets>
 <sheet>
@@ -6183,7 +6185,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="182.88" y="-60.96" size="1.778" layer="91">1</text>
 <text x="-55.88" y="73.66" size="1.778" layer="91">ACTION BUTTONS</text>
 <text x="-55.88" y="15.24" size="1.778" layer="91">SELECTION BUTTONS</text>
-<text x="78.74" y="96.52" size="1.778" layer="91">IR TRANSMITTER</text>
+<text x="68.58" y="96.52" size="1.778" layer="91">IR TRANSMITTER</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="60.96" y="27.94"/>
@@ -6241,6 +6243,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="R7" gate="G$1" x="96.52" y="86.36" rot="MR0"/>
 <instance part="+3V14" gate="G$1" x="86.36" y="91.44"/>
 <instance part="POWER_SWITCH" gate="G$1" x="22.86" y="68.58"/>
+<instance part="R8" gate="G$1" x="96.52" y="78.74" rot="MR0"/>
+<instance part="R9" gate="G$1" x="96.52" y="93.98" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -6325,6 +6329,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="91.44" y1="86.36" x2="86.36" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="86.36" x2="86.36" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="+3V14" gate="G$1" pin="+3V3"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="86.36" x2="91.44" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="86.36" x2="91.44" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -6642,6 +6650,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="IR_TRANSMIT" gate="A" pin="22"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="106.68" y1="86.36" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="101.6" y1="78.74" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="101.6" y1="93.98" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">

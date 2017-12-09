@@ -6016,6 +6016,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="91.44" y="-38.1" size="1.778" layer="91"></text>
 <text x="91.44" y="-40.64" size="1.778" layer="91"></text>
 <text x="182.88" y="-60.96" size="1.778" layer="91">1</text>
+<text x="-55.88" y="73.66" size="1.778" layer="91">ACTION BUTTONS</text>
+<text x="-55.88" y="15.24" size="1.778" layer="91">SELECTION BUTTONS</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="60.96" y="27.94"/>

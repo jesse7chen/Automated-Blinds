@@ -958,10 +958,10 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="unknown" x="111.76" y="15.24" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="111.76" y="15.24" size="1.778" layer="27" display="off"/>
 </element>
-<element name="C1" library="rcl" package="C050-024X044" value="0.1u" x="-55.88" y="52.07"/>
-<element name="C2" library="rcl" package="C050-024X044" value=".1u" x="-63.5" y="52.07"/>
-<element name="C3" library="rcl" package="C050-024X044" value=".1u" x="-16.51" y="62.23"/>
-<element name="C4" library="rcl" package="C050-024X044" value="0.33u" x="-24.13" y="62.23"/>
+<element name="C1" library="rcl" package="C050-024X044" value="0.1u" x="31.75" y="21.59" rot="R180"/>
+<element name="C2" library="rcl" package="C050-024X044" value=".1u" x="31.75" y="29.21" rot="R180"/>
+<element name="C3" library="rcl" package="C050-024X044" value=".1u" x="17.78" y="76.2" rot="R180"/>
+<element name="C4" library="rcl" package="C050-024X044" value="0.33u" x="15.24" y="86.36" rot="R270"/>
 <element name="DOWN_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="129.54" y="53.34">
 <attribute name="PRICE" value="0.21 USD" x="129.54" y="53.34" size="1.778" layer="27" display="off"/>
 <attribute name="MP" value="B3F-1000" x="129.54" y="53.34" size="1.778" layer="27" display="off"/>
@@ -970,34 +970,34 @@ design rules under a new name.</description>
 <attribute name="PACKAGE" value="None" x="129.54" y="53.34" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="Omron" x="129.54" y="53.34" size="1.778" layer="27" display="off"/>
 </element>
-<element name="ENTER_BUTTON" library="switch-omron" package="B3F/40XX" value="" x="109.22" y="87.63">
-<attribute name="OC_FARNELL" value="unknown" x="109.22" y="87.63" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="109.22" y="87.63" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="109.22" y="87.63" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="109.22" y="87.63" size="1.778" layer="27" display="off"/>
+<element name="ENTER_BUTTON" library="switch-omron" package="B3F/40XX" value="" x="110.49" y="86.36" rot="R180">
+<attribute name="OC_FARNELL" value="unknown" x="110.49" y="86.36" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="110.49" y="86.36" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="110.49" y="86.36" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="" x="110.49" y="86.36" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="IR_TRANSMIT" library="VSLB3940" package="LED_TLH" value="VSLB3940" x="5.08" y="58.42" rot="R90">
 <attribute name="VENDOR" value="Vishay" x="5.08" y="58.42" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="VSLB3940" x="5.08" y="58.42" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="JTAG/SWD1" library="pinhead" package="2X10" value="" x="26.67" y="10.16"/>
-<element name="LEFT_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="118.11" y="41.91">
-<attribute name="PRICE" value="0.21 USD" x="118.11" y="41.91" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="B3F-1000" x="118.11" y="41.91" size="1.778" layer="27" display="off"/>
-<attribute name="AVAILABILITY" value="Good" x="118.11" y="41.91" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" Switch, FLUX TIGHT MECHANICAL KEYSwitch, , 50MA@24VDC, NO GROUND TERM., FLAT PLUNG " x="118.11" y="41.91" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="None" x="118.11" y="41.91" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="Omron" x="118.11" y="41.91" size="1.778" layer="27" display="off"/>
+<element name="JTAG/SWD1" library="pinhead" package="2X10" value="" x="38.1" y="8.89" rot="R180"/>
+<element name="LEFT_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="115.57" y="40.64" rot="R180">
+<attribute name="PRICE" value="0.21 USD" x="115.57" y="40.64" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="B3F-1000" x="115.57" y="40.64" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="AVAILABILITY" value="Good" x="115.57" y="40.64" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" Switch, FLUX TIGHT MECHANICAL KEYSwitch, , 50MA@24VDC, NO GROUND TERM., FLAT PLUNG " x="115.57" y="40.64" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PACKAGE" value="None" x="115.57" y="40.64" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="Omron" x="115.57" y="40.64" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="OLED" library="pinhead" package="1X06" value="" x="8.89" y="31.75" rot="R270"/>
-<element name="PWR" library="pinhead" package="1X03" value="" x="22.86" y="95.25"/>
-<element name="R1" library="rcl" package="0207/10" value="1K" x="-19.05" y="67.31"/>
-<element name="R2" library="rcl" package="0207/10" value="1K" x="-31.75" y="67.31"/>
-<element name="R3" library="rcl" package="0207/10" value="1K" x="-44.45" y="67.31"/>
-<element name="R4" library="rcl" package="0207/10" value="1K" x="-57.15" y="67.31"/>
-<element name="R5" library="rcl" package="0207/10" value="1K" x="-19.05" y="72.39"/>
-<element name="R6" library="rcl" package="0207/10" value="1K" x="-31.75" y="72.39"/>
-<element name="R7" library="rcl" package="0207/10" value="10" x="-44.45" y="72.39"/>
+<element name="PWR" library="pinhead" package="1X03" value="" x="53.34" y="95.25"/>
+<element name="R1" library="rcl" package="0207/10" value="1K" x="92.71" y="57.15" rot="R180"/>
+<element name="R2" library="rcl" package="0207/10" value="1K" x="99.06" y="43.18" rot="R180"/>
+<element name="R3" library="rcl" package="0207/10" value="1K" x="102.87" y="63.5" rot="R180"/>
+<element name="R4" library="rcl" package="0207/10" value="1K" x="121.92" y="29.21"/>
+<element name="R5" library="rcl" package="0207/10" value="1K" x="90.17" y="85.09" rot="R180"/>
+<element name="R6" library="rcl" package="0207/10" value="1K" x="92.71" y="12.7" rot="R180"/>
+<element name="R7" library="rcl" package="0207/10" value="10" x="12.7" y="63.5" rot="R90"/>
 <element name="RIGHT_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="118.11" y="66.04">
 <attribute name="PRICE" value="0.21 USD" x="118.11" y="66.04" size="1.778" layer="27" display="off"/>
 <attribute name="MP" value="B3F-1000" x="118.11" y="66.04" size="1.778" layer="27" display="off"/>
@@ -1006,24 +1006,24 @@ design rules under a new name.</description>
 <attribute name="PACKAGE" value="None" x="118.11" y="66.04" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="Omron" x="118.11" y="66.04" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U1" library="lpc_11xx" package="DIL28-6" value="LPC1114FN28/102" x="59.69" y="55.88"/>
-<element name="U2" library="lpc_11xx" package="TO220V" value="UA78MC" x="-15.24" y="49.53"/>
+<element name="U1" library="lpc_11xx" package="DIL28-6" value="LPC1114FN28/102" x="62.23" y="53.34"/>
+<element name="U2" library="lpc_11xx" package="TO220V" value="UA78MC" x="35.56" y="90.17"/>
 <element name="UART" library="pinhead" package="1X06" value="" x="76.2" y="95.25"/>
-<element name="UP_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="106.68" y="54.61">
-<attribute name="PRICE" value="0.21 USD" x="106.68" y="54.61" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="B3F-1000" x="106.68" y="54.61" size="1.778" layer="27" display="off"/>
-<attribute name="AVAILABILITY" value="Good" x="106.68" y="54.61" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" Switch, FLUX TIGHT MECHANICAL KEYSwitch, , 50MA@24VDC, NO GROUND TERM., FLAT PLUNG " x="106.68" y="54.61" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="None" x="106.68" y="54.61" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="Omron" x="106.68" y="54.61" size="1.778" layer="27" display="off"/>
+<element name="UP_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="105.41" y="54.61" rot="R180">
+<attribute name="PRICE" value="0.21 USD" x="105.41" y="54.61" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="B3F-1000" x="105.41" y="54.61" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="AVAILABILITY" value="Good" x="105.41" y="54.61" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" Switch, FLUX TIGHT MECHANICAL KEYSwitch, , 50MA@24VDC, NO GROUND TERM., FLAT PLUNG " x="105.41" y="54.61" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PACKAGE" value="None" x="105.41" y="54.61" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="Omron" x="105.41" y="54.61" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="POWER_SWITCH" library="DIP-SLIDE-SWITCH_3P-11.6X4.0X5.4_2.0MM_" package="SW3-2.5-11.6X4.0X5.4+2.0MM" value="DIP-SLIDE-SWITCH(3P-11.6X4.0X5.4+2.0MM)-EG1218" x="41.91" y="95.25">
-<attribute name="PRICE" value="0.41 USD" x="41.91" y="95.25" size="1.778" layer="27" display="off"/>
-<attribute name="MP" value="EG1218" x="41.91" y="95.25" size="1.778" layer="27" display="off"/>
-<attribute name="AVAILABILITY" value="Good" x="41.91" y="95.25" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value=" EG Series SPDT On-On Vertical Through Hole Slide Switch " x="41.91" y="95.25" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="FakePackage u" x="41.91" y="95.25" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="E-Switch" x="41.91" y="95.25" size="1.778" layer="27" display="off"/>
+<element name="POWER_SWITCH" library="DIP-SLIDE-SWITCH_3P-11.6X4.0X5.4_2.0MM_" package="SW3-2.5-11.6X4.0X5.4+2.0MM" value="DIP-SLIDE-SWITCH(3P-11.6X4.0X5.4+2.0MM)-EG1218" x="17.78" y="95.25" rot="R180">
+<attribute name="PRICE" value="0.41 USD" x="17.78" y="95.25" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="EG1218" x="17.78" y="95.25" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="AVAILABILITY" value="Good" x="17.78" y="95.25" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" EG Series SPDT On-On Vertical Through Hole Slide Switch " x="17.78" y="95.25" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PACKAGE" value="FakePackage u" x="17.78" y="95.25" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="E-Switch" x="17.78" y="95.25" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 </elements>
 <signals>
@@ -1043,20 +1043,20 @@ design rules under a new name.</description>
 <contactref element="R5" pad="2"/>
 <contactref element="R6" pad="2"/>
 <contactref element="R7" pad="2"/>
-<wire x1="-13.97" y1="67.31" x2="-13.97" y2="72.39" width="0" layer="19" extent="1-1"/>
-<wire x1="-19.05" y1="62.23" x2="-13.97" y2="67.31" width="0" layer="19" extent="1-1"/>
-<wire x1="-12.7" y1="46.99" x2="-19.05" y2="62.23" width="0" layer="19" extent="1-1"/>
-<wire x1="-26.67" y1="67.31" x2="-19.05" y2="62.23" width="0" layer="19" extent="1-1"/>
-<wire x1="-26.67" y1="72.39" x2="-26.67" y2="67.31" width="0" layer="19" extent="1-1"/>
-<wire x1="-39.37" y1="72.39" x2="-26.67" y2="72.39" width="0" layer="19" extent="1-1"/>
-<wire x1="-39.37" y1="67.31" x2="-39.37" y2="72.39" width="0" layer="19" extent="1-1"/>
-<wire x1="8.89" y1="38.1" x2="-39.37" y2="67.31" width="0" layer="19" extent="1-1"/>
-<wire x1="15.24" y1="8.89" x2="8.89" y2="38.1" width="0" layer="19" extent="1-1"/>
-<wire x1="-58.42" y1="52.07" x2="15.24" y2="8.89" width="0" layer="19" extent="1-1"/>
-<wire x1="-66.04" y1="52.07" x2="-58.42" y2="52.07" width="0" layer="19" extent="1-1"/>
-<wire x1="-62.23" y1="67.31" x2="-58.42" y2="52.07" width="0" layer="19" extent="1-1"/>
-<wire x1="60.96" y1="63.5" x2="15.24" y2="8.89" width="0" layer="19" extent="1-1"/>
-<wire x1="58.42" y1="48.26" x2="60.96" y2="63.5" width="0" layer="19" extent="1-1"/>
+<wire x1="87.63" y1="57.15" x2="85.09" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="76.2" x2="87.63" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="38.1" y1="87.63" x2="20.32" y2="76.2" width="0" layer="19" extent="1-1"/>
+<wire x1="93.98" y1="43.18" x2="20.32" y2="76.2" width="0" layer="19" extent="1-1"/>
+<wire x1="87.63" y1="12.7" x2="93.98" y2="43.18" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="68.58" x2="87.63" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="63.5" x2="12.7" y2="68.58" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="38.1" x2="97.79" y2="63.5" width="0" layer="19" extent="1-1"/>
+<wire x1="49.53" y1="10.16" x2="8.89" y2="38.1" width="0" layer="19" extent="1-1"/>
+<wire x1="34.29" y1="21.59" x2="49.53" y2="10.16" width="0" layer="19" extent="1-1"/>
+<wire x1="34.29" y1="29.21" x2="34.29" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="116.84" y1="29.21" x2="34.29" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="63.5" y1="60.96" x2="49.53" y2="10.16" width="0" layer="19" extent="1-1"/>
+<wire x1="60.96" y1="45.72" x2="63.5" y2="60.96" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="U2" pad="2"/>
@@ -1084,40 +1084,40 @@ design rules under a new name.</description>
 <contactref element="DOWN_BUTTON" pad="2"/>
 <contactref element="ENTER_BUTTON" pad="3"/>
 <contactref element="BACK_BUTTON" pad="3"/>
-<wire x1="-21.59" y1="62.23" x2="-13.97" y2="62.23" width="0" layer="19" extent="1-1"/>
-<wire x1="-15.24" y1="46.99" x2="-21.59" y2="62.23" width="0" layer="19" extent="1-1"/>
-<wire x1="38.1" y1="11.43" x2="-15.24" y2="46.99" width="0" layer="19" extent="1-1"/>
-<wire x1="35.56" y1="11.43" x2="38.1" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="33.02" y1="11.43" x2="35.56" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="30.48" y1="11.43" x2="33.02" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="27.94" y1="11.43" x2="30.48" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="25.4" y1="11.43" x2="27.94" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="22.86" y1="11.43" x2="25.4" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="20.32" y1="11.43" x2="22.86" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="17.78" y1="11.43" x2="20.32" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="-53.34" y1="52.07" x2="17.78" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="-60.96" y1="52.07" x2="-53.34" y2="52.07" width="0" layer="19" extent="1-1"/>
-<wire x1="121.36" y1="68.29" x2="30.48" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="109.93" y1="56.86" x2="-60.96" y2="52.07" width="0" layer="19" extent="1-1"/>
-<wire x1="121.36" y1="44.16" x2="17.78" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="8.89" y1="33.02" x2="27.94" y2="11.43" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="83.82" x2="15.24" y2="76.2" width="0" layer="19" extent="1-1"/>
+<wire x1="35.56" y1="87.63" x2="15.24" y2="83.82" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="7.62" x2="35.56" y2="87.63" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="7.62" x2="26.67" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="31.75" y1="7.62" x2="29.21" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="34.29" y1="7.62" x2="31.75" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="36.83" y1="7.62" x2="34.29" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="39.37" y1="7.62" x2="36.83" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="7.62" x2="39.37" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="44.45" y1="7.62" x2="41.91" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="46.99" y1="7.62" x2="44.45" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="21.59" x2="46.99" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="29.21" x2="29.21" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="121.36" y1="68.29" x2="34.29" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="102.16" y1="52.36" x2="29.21" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="112.32" y1="38.39" x2="46.99" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="33.02" x2="36.83" y2="7.62" width="0" layer="19" extent="1-1"/>
 <wire x1="82.55" y1="95.25" x2="8.89" y2="33.02" width="0" layer="19" extent="1-1"/>
-<wire x1="22.86" y1="95.25" x2="-60.96" y2="52.07" width="0" layer="19" extent="1-1"/>
-<wire x1="132.79" y1="55.59" x2="-15.24" y2="46.99" width="0" layer="19" extent="1-1"/>
-<wire x1="106.5784" y1="81.4324" x2="121.36" y2="68.29" width="0" layer="19" extent="1-1"/>
-<wire x1="58.42" y1="63.5" x2="106.5784" y2="81.4324" width="0" layer="19" extent="1-1"/>
-<wire x1="60.96" y1="48.26" x2="58.42" y2="63.5" width="0" layer="19" extent="1-1"/>
-<wire x1="109.1184" y1="9.0424" x2="109.93" y2="56.86" width="0" layer="19" extent="1-1"/>
+<wire x1="53.34" y1="95.25" x2="29.21" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="132.79" y1="55.59" x2="35.56" y2="87.63" width="0" layer="19" extent="1-1"/>
+<wire x1="113.1316" y1="92.5576" x2="121.36" y2="68.29" width="0" layer="19" extent="1-1"/>
+<wire x1="60.96" y1="60.96" x2="113.1316" y2="92.5576" width="0" layer="19" extent="1-1"/>
+<wire x1="63.5" y1="45.72" x2="60.96" y2="60.96" width="0" layer="19" extent="1-1"/>
+<wire x1="109.1184" y1="9.0424" x2="102.16" y2="52.36" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SWDIO">
 <contactref element="U1" pad="12"/>
 <contactref element="JTAG/SWD1" pad="7"/>
-<wire x1="22.86" y1="8.89" x2="71.12" y2="48.26" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="10.16" x2="73.66" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SWCLK">
 <contactref element="U1" pad="3"/>
 <contactref element="JTAG/SWD1" pad="9"/>
-<wire x1="25.4" y1="8.89" x2="48.26" y2="48.26" width="0" layer="19" extent="1-1"/>
+<wire x1="39.37" y1="10.16" x2="50.8" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RESET">
 <contactref element="JTAG/SWD1" pad="15"/>
@@ -1125,91 +1125,91 @@ design rules under a new name.</description>
 <signal name="TX">
 <contactref element="U1" pad="16"/>
 <contactref element="UART" pad="2"/>
-<wire x1="73.66" y1="63.5" x2="72.39" y2="95.25" width="0" layer="19" extent="1-1"/>
+<wire x1="76.2" y1="60.96" x2="72.39" y2="95.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RX">
 <contactref element="U1" pad="15"/>
 <contactref element="UART" pad="3"/>
-<wire x1="76.2" y1="63.5" x2="74.93" y2="95.25" width="0" layer="19" extent="1-1"/>
+<wire x1="78.74" y1="60.96" x2="74.93" y2="95.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCREEN_RST">
 <contactref element="U1" pad="28"/>
 <contactref element="OLED" pad="4"/>
-<wire x1="8.89" y1="30.48" x2="43.18" y2="63.5" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="30.48" x2="45.72" y2="60.96" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCL">
 <contactref element="U1" pad="27"/>
 <contactref element="OLED" pad="5"/>
-<wire x1="45.72" y1="63.5" x2="8.89" y2="27.94" width="0" layer="19" extent="1-1"/>
+<wire x1="48.26" y1="60.96" x2="8.89" y2="27.94" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDA">
 <contactref element="U1" pad="5"/>
 <contactref element="OLED" pad="6"/>
-<wire x1="8.89" y1="25.4" x2="53.34" y2="48.26" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="25.4" x2="55.88" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="LEFT_B">
 <contactref element="LEFT_BUTTON" pad="4"/>
 <contactref element="R2" pad="1"/>
 <contactref element="U1" pad="24"/>
-<wire x1="121.36" y1="39.66" x2="-36.83" y2="67.31" width="0" layer="19" extent="1-1"/>
-<wire x1="53.34" y1="63.5" x2="121.36" y2="39.66" width="0" layer="19" extent="1-1"/>
+<wire x1="112.32" y1="42.89" x2="104.14" y2="43.18" width="0" layer="19" extent="1-1"/>
+<wire x1="55.88" y1="60.96" x2="112.32" y2="42.89" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UP_B">
 <contactref element="UP_BUTTON" pad="4"/>
 <contactref element="R1" pad="1"/>
 <contactref element="U1" pad="26"/>
-<wire x1="109.93" y1="52.36" x2="-24.13" y2="67.31" width="0" layer="19" extent="1-1"/>
-<wire x1="48.26" y1="63.5" x2="109.93" y2="52.36" width="0" layer="19" extent="1-1"/>
+<wire x1="102.16" y1="56.86" x2="97.79" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="50.8" y1="60.96" x2="102.16" y2="56.86" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RIGHT_B">
 <contactref element="RIGHT_BUTTON" pad="3"/>
 <contactref element="R3" pad="1"/>
 <contactref element="U1" pad="25"/>
-<wire x1="114.86" y1="63.79" x2="50.8" y2="63.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-49.53" y1="67.31" x2="114.86" y2="63.79" width="0" layer="19" extent="1-1"/>
+<wire x1="114.86" y1="63.79" x2="53.34" y2="60.96" width="0" layer="19" extent="1-1"/>
+<wire x1="107.95" y1="63.5" x2="114.86" y2="63.79" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DOWN_B">
 <contactref element="DOWN_BUTTON" pad="3"/>
 <contactref element="R4" pad="2"/>
 <contactref element="U1" pad="1"/>
-<wire x1="126.29" y1="51.09" x2="43.18" y2="48.26" width="0" layer="19" extent="1-1"/>
-<wire x1="-52.07" y1="67.31" x2="126.29" y2="51.09" width="0" layer="19" extent="1-1"/>
+<wire x1="126.29" y1="51.09" x2="45.72" y2="45.72" width="0" layer="19" extent="1-1"/>
+<wire x1="127" y1="29.21" x2="126.29" y2="51.09" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ENTER_B">
 <contactref element="ENTER_BUTTON" pad="1"/>
 <contactref element="R5" pad="1"/>
 <contactref element="U1" pad="2"/>
-<wire x1="103.0224" y1="84.9884" x2="-24.13" y2="72.39" width="0" layer="19" extent="1-1"/>
-<wire x1="45.72" y1="48.26" x2="103.0224" y2="84.9884" width="0" layer="19" extent="1-1"/>
+<wire x1="116.6876" y1="89.0016" x2="95.25" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="48.26" y1="45.72" x2="116.6876" y2="89.0016" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BACK_B">
 <contactref element="BACK_BUTTON" pad="1"/>
 <contactref element="R6" pad="1"/>
 <contactref element="U1" pad="4"/>
-<wire x1="50.8" y1="48.26" x2="105.5624" y2="12.5984" width="0" layer="19" extent="1-1"/>
-<wire x1="-36.83" y1="72.39" x2="105.5624" y2="12.5984" width="0" layer="19" extent="1-1"/>
+<wire x1="53.34" y1="45.72" x2="105.5624" y2="12.5984" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="12.7" x2="105.5624" y2="12.5984" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IR_CONTROL">
 <contactref element="U1" pad="18"/>
 <contactref element="IR_TRANSMIT" pad="1"/>
-<wire x1="68.58" y1="63.5" x2="5.08" y2="55.88" width="0" layer="19" extent="1-1"/>
+<wire x1="71.12" y1="60.96" x2="5.08" y2="55.88" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="IR_TRANSMIT" pad="2"/>
 <contactref element="R7" pad="1"/>
-<wire x1="5.08" y1="58.42" x2="-49.53" y2="72.39" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="58.42" x2="12.7" y2="58.42" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="POWER_SWITCH" pad="1"/>
 <contactref element="PWR" pad="1"/>
-<wire x1="20.32" y1="95.25" x2="39.41" y2="95.25" width="0" layer="19" extent="1-1"/>
+<wire x1="50.8" y1="95.25" x2="20.28" y2="95.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="POWER_SWITCH" pad="3"/>
 <contactref element="U2" pad="1"/>
 <contactref element="C4" pad="1"/>
-<wire x1="-26.67" y1="62.23" x2="44.41" y2="95.25" width="0" layer="19" extent="1-1"/>
-<wire x1="-17.78" y1="46.99" x2="-26.67" y2="62.23" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="88.9" x2="15.28" y2="95.25" width="0" layer="19" extent="1-1"/>
+<wire x1="33.02" y1="87.63" x2="15.24" y2="88.9" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

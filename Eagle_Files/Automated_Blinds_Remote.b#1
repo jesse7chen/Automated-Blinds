@@ -974,13 +974,13 @@ design rules under a new name.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="VSLB3940" x="5.08" y="58.42" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="JTAG/SWD1" library="pinhead" package="2X10" value="" x="67.31" y="10.16" rot="R180"/>
-<element name="LEFT_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="129.54" y="41.91" rot="R180">
-<attribute name="PRICE" value="0.21 USD" x="129.54" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MP" value="B3F-1000" x="129.54" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="AVAILABILITY" value="Good" x="129.54" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DESCRIPTION" value=" Switch, FLUX TIGHT MECHANICAL KEYSwitch, , 50MA@24VDC, NO GROUND TERM., FLAT PLUNG " x="129.54" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="PACKAGE" value="None" x="129.54" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="Omron" x="129.54" y="41.91" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="LEFT_BUTTON" library="B3F-1000" package="SW_B3F-1000" value="B3F-1000" x="129.54" y="36.83" rot="R180">
+<attribute name="PRICE" value="0.21 USD" x="129.54" y="36.83" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="B3F-1000" x="129.54" y="36.83" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="AVAILABILITY" value="Good" x="129.54" y="36.83" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" Switch, FLUX TIGHT MECHANICAL KEYSwitch, , 50MA@24VDC, NO GROUND TERM., FLAT PLUNG " x="129.54" y="36.83" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PACKAGE" value="None" x="129.54" y="36.83" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="Omron" x="129.54" y="36.83" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="OLED" library="pinhead" package="1X06" value="" x="8.89" y="31.75" rot="R270"/>
 <element name="PWR" library="pinhead" package="1X03" value="" x="53.34" y="95.25"/>
@@ -1142,8 +1142,6 @@ design rules under a new name.</description>
 <wire x1="111.05" y1="51.09" x2="111.05" y2="43.18" width="0.6096" layer="16"/>
 <wire x1="111.05" y1="43.18" x2="111.05" y2="40.946" width="0.6096" layer="16"/>
 <wire x1="111.05" y1="40.946" x2="105.5116" y2="35.4076" width="0.6096" layer="16"/>
-<wire x1="126.29" y1="39.66" x2="124.17" y2="39.66" width="0.6096" layer="16"/>
-<wire x1="124.17" y1="39.66" x2="120.65" y2="43.18" width="0.6096" layer="16"/>
 <wire x1="120.65" y1="43.18" x2="111.05" y2="43.18" width="0.6096" layer="16"/>
 <wire x1="120.65" y1="43.18" x2="120.65" y2="46.99" width="0.6096" layer="16"/>
 <wire x1="120.65" y1="46.99" x2="146.05" y2="46.99" width="0.6096" layer="16"/>
@@ -1163,6 +1161,10 @@ design rules under a new name.</description>
 <wire x1="53.34" y1="8.89" x2="53.34" y2="30.48" width="0.6096" layer="16"/>
 <wire x1="53.34" y1="91.44" x2="148.59" y2="91.44" width="0.6096" layer="16"/>
 <wire x1="148.59" y1="91.44" x2="148.59" y2="59.69" width="0.6096" layer="16"/>
+<wire x1="126.29" y1="34.58" x2="126.29" y2="34.29" width="0.6096" layer="16"/>
+<wire x1="126.29" y1="34.29" x2="121.92" y2="34.29" width="0.6096" layer="16"/>
+<wire x1="121.92" y1="34.29" x2="121.92" y2="43.18" width="0.6096" layer="16"/>
+<wire x1="121.92" y1="43.18" x2="120.65" y2="43.18" width="0.6096" layer="16"/>
 </signal>
 <signal name="SWDIO">
 <contactref element="U1" pad="12"/>
@@ -1244,10 +1246,11 @@ design rules under a new name.</description>
 <wire x1="69.85" y1="40.64" x2="106.68" y2="40.64" width="0.6096" layer="16"/>
 <wire x1="106.68" y1="40.64" x2="106.68" y2="44.45" width="0.6096" layer="16"/>
 <wire x1="106.68" y1="44.45" x2="126" y2="44.45" width="0.6096" layer="1"/>
-<wire x1="126" y1="44.45" x2="126.29" y2="44.16" width="0.6096" layer="1"/>
 <wire x1="69.85" y1="40.64" x2="69.85" y2="30.48" width="0.6096" layer="16"/>
 <wire x1="69.85" y1="30.48" x2="59.69" y2="30.48" width="0.6096" layer="16"/>
 <wire x1="59.69" y1="30.48" x2="59.69" y2="48.26" width="0.6096" layer="16"/>
+<wire x1="126" y1="44.45" x2="126" y2="39.08" width="0.6096" layer="1"/>
+<wire x1="126" y1="39.08" x2="126.29" y2="39.08" width="0.6096" layer="1"/>
 </signal>
 <signal name="UP_B">
 <contactref element="UP_BUTTON" pad="4"/>
@@ -1298,22 +1301,26 @@ design rules under a new name.</description>
 <contactref element="BACK_BUTTON" pad="1"/>
 <contactref element="R6" pad="1"/>
 <contactref element="U1" pad="4"/>
-<wire x1="80.01" y1="34.29" x2="82.55" y2="31.75" width="0.6096" layer="16"/>
-<wire x1="82.55" y1="31.75" x2="108.966" y2="31.75" width="0.6096" layer="16"/>
 <wire x1="108.966" y1="31.75" x2="109.0676" y2="31.8516" width="0.6096" layer="16"/>
 <wire x1="80.01" y1="34.29" x2="76.2" y2="34.29" width="0.6096" layer="1"/>
 <wire x1="76.2" y1="34.29" x2="76.2" y2="74.93" width="0.6096" layer="1"/>
 <wire x1="76.2" y1="74.93" x2="62.23" y2="74.93" width="0.6096" layer="1"/>
 <wire x1="62.23" y1="74.93" x2="62.23" y2="63.5" width="0.6096" layer="1"/>
+<wire x1="80.01" y1="34.29" x2="80.01" y2="29.21" width="0.6096" layer="16"/>
+<wire x1="80.01" y1="29.21" x2="86.36" y2="29.21" width="0.6096" layer="16"/>
+<wire x1="86.36" y1="29.21" x2="86.36" y2="19.05" width="0.6096" layer="16"/>
+<wire x1="86.36" y1="19.05" x2="109.22" y2="19.05" width="0.6096" layer="16"/>
+<wire x1="109.22" y1="19.05" x2="109.22" y2="31.8516" width="0.6096" layer="16"/>
+<wire x1="109.22" y1="31.8516" x2="109.0676" y2="31.8516" width="0.6096" layer="16"/>
 </signal>
 <signal name="IR_CONTROL">
 <contactref element="U1" pad="18"/>
 <contactref element="IR_TRANSMIT" pad="1"/>
 <wire x1="5.08" y1="55.88" x2="5.08" y2="43.18" width="0.6096" layer="16"/>
-<via x="5.08" y="43.18" extent="1-16" drill="0.6" shape="square"/>
-<wire x1="5.08" y1="43.18" x2="44.45" y2="43.18" width="0.6096" layer="1"/>
-<via x="44.45" y="43.18" extent="1-16" drill="0.6" shape="square"/>
-<wire x1="44.45" y1="43.18" x2="44.45" y2="48.26" width="0.6096" layer="16"/>
+<wire x1="5.08" y1="43.18" x2="22.86" y2="43.18" width="0.6096" layer="16"/>
+<via x="22.86" y="43.18" extent="1-16" drill="0.6" shape="square"/>
+<wire x1="22.86" y1="43.18" x2="44.45" y2="43.18" width="0.6096" layer="1"/>
+<wire x1="44.45" y1="43.18" x2="44.45" y2="48.26" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="IR_TRANSMIT" pad="2"/>
