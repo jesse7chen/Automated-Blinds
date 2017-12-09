@@ -20,7 +20,7 @@ void initIR(void){
     /* Generate interrupt and reset timer when we hit count limit */
     LPC_TMR32B0->MCR = (1UL << 1) | (1UL << 0);
     /* Count up to 300,000, this should be ~1ms */
-    LPC_TMR32B0->MR0 = 300000;
+    LPC_TMR32B0->MR0 = 48150;
     /*  Enable timer interrupt */
     NVIC_SetPriority(TIMER_32_0_IRQn, 0);
     //NVIC_ClearPendingIRQ(TIMER_32_0_IRQn);
@@ -46,11 +46,11 @@ void sendCommand(const uint8_t command[]){
 
 void sendIRBit(void){
     if((buffer[byteIdx] & 0x80) != 0){
-        //printf("1");
+        printf("1");
         IR_on();
     }
     else{
-        //printf("0");
+        printf("0");
         IR_off();
     }
     
@@ -70,7 +70,7 @@ void sendIRBit(void){
         byteIdx = 0;
         bitIdx = 0;
         IR_off();
-        //printf("\r\n");
+        printf("\r\n");
     }
 }
 

@@ -26,6 +26,10 @@ void makeCommand(uint8_t commandType, const uint8_t time[]){
     }
 
     sendCommand(command);
+    command[0] = START_SEQ;
+    command[1] = 0x00;
+    command[2] = 0x00;
+    
 }
 
 
