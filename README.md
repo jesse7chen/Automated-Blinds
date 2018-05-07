@@ -5,5 +5,6 @@ Code and supporting material to create a product which can open/close blinds bas
 The microcontroller being used currently is a LPC1114fn28/102, which also interfaces to a 128x32 OLED screen via I2C. The screen's driver is the SSD1306.
 
 See demo video here!
+
 [![Demo Video](https://img.youtube.com/vi/aoLctwCVQ2U/0.jpg)](https://youtu.be/aoLctwCVQ2U)
 
